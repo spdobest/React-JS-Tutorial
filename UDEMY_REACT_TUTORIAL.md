@@ -95,4 +95,13 @@ ReactDOM.render(<Person name ="Person 4" age = "30" job = "Software Engineer"/>,
   
 Now it will show the horzontal list of boxes with all the details above mentioned. Here we created only person component and reusing it in many places.  
   
- 
+##  Why React ?  
+1. UI state becomes difficult to manage with vanila javascript (For every portion of the web application we need to write manually and its very difficult to maintain the code)  
+2. Focus on Business Logic, Not on preventing your app from exploding  
+  
+## Single Page and Multi Page Application  
+**Single Page** Only one HTML page with content is dynamically loaded by client at run time. Content is load using React. Typically only one ReactDOM.render() call  
+**Multi Page** Multiple HTML page where content is render on server.  
+
+
+
