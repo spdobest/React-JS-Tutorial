@@ -20,17 +20,18 @@ It stands for javascript extension. JSX is an XML/HTML-like syntax used by React
 Basically, by using JSX you can write concise HTML/XML-like structures (e.g., DOM like tree structures) in the same file as you write JavaScript code, then Babel will transform these expressions into actual JavaScript code. Unlike the past, instead of putting JavaScript into HTML, JSX allows us to put HTML into JavaScript.  
   
 The following code can be written in html   
-
+```   
 var nav = (  
     <ul id="nav">  
       <li><a href="#">Home</a></li>  
       <li><a href="#">About</a></li>  
       <li><a href="#">Clients</a></li>  
       <li><a href="#">Contact Us</a></li>  
-    </ul>  
+    </ul>   
 );  
-  
+```    
 Now the above code can be written using JSX , here is the code   
+```  
 var nav = React.createElement(  
    "ul",  
    { id: "nav" },  
@@ -70,7 +71,7 @@ var nav = React.createElement(
          "Contact Us"          
       )        
    )      
-);    
+); ```    
   
 In the above code snippet, JSX using React.ceateElement() method to convert the Html code to jsx. JSX provides a concise and familiar syntax for defining a tree structure with attributes that does not require learning a templating language or leaving JavaScript. Both of which are can be a win when building large applications.   
 
