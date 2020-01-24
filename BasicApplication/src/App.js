@@ -15,7 +15,6 @@ class App extends Component {
       {name:'Narayan', age:'25'}
     ],
     otherStates: 'Some other values'
-
   }
 
 switchNameHandler = () =>{

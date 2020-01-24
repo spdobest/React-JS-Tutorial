@@ -1,0 +1,206 @@
+<html>
+
+<head>
+
+<title>Datatype Example</title>
+
+</head>
+
+<body>
+
+<h1><b><u>DATATYPE EXAMPLE</u></b></h1><br> <br>
+
+
+<h3>For the result please see the values in console</h3>
+
+
+<script language="javascript">
+
+function monthName(num) {
+	var arr = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+	 console.log(arr[num+1]);
+}
+monthName(1)
+
+
+function findSmallestNum(arr) {
+    var arr2 = []; 
+
+    var smallNum = arr[0];
+    for(let i = 0;i<arr.length;i++){
+
+        for(let j = 0;j<arr.length;j++){
+            if(smallNum > arr[j]){
+                smallNum = arr[j];
+                
+            }
+        }
+        arr2.push(smallNum);
+    }
+
+	return arr2[0];
+}
+
+console.log(typeof('a'));
+
+// if odd add 1, if even, dont do anything , char = caps+!, !boolean
+function changeArray(arr){ 
+var arr1 = [];
+    arr.forEach(element => {
+        if(typeof(element) == 'number' ){
+            if(element%2==0){
+                arr1.push(element+1);
+            }
+            else{
+                arr1.push(element);
+            }
+            
+        }
+        else if(typeof(element) == 'string' ){
+            const upper = element.charAt(0).toUpperCase() + element.substring(1)+"!";
+            arr1.push(upper);
+        }
+        else if(typeof(element) == 'boolean' ){
+            arr1.push(!element);
+        }
+    });
+return arr1;
+}
+
+var arr1 = [-1,-10,'a',false,12];
+// console.log(changeArray(arr1));
+// repeate each char
+function repeateChar(str){
+    var arr1 = [];
+    str.forEach( element =>{
+        arr1.push(element);
+        arr1.push(element);
+    });
+
+    return arr1;
+
+}
+// input = siba , output = ssiibbaa
+function repeateEachChar(name){ 
+var nameArr = name.split(''); 
+console.log(nameArr);
+var arr2 = [];
+nameArr.forEach(element =>{
+    arr2.push(element);
+    arr2.push(element);
+});
+
+var repeatedChar = arr2.join('');
+return repeatedChar; 
+} 
+
+// Create a function that takes an array of non-negative numbers and strings and return a new array without the strings.
+function removeCharFromArr(arr){
+    var arr1 = [];
+    arr.forEach(element => {
+    if(typeof(element) == 'number' ){
+                arr1.push(element);
+        } 
+    });
+    return arr1;
+    
+}
+
+// Create a function that takes a string and returns the number (count) of vowels contained within it.
+function countVowels(str){
+    var strCharArray = str.split('');
+    var vowels = ['a','e','i','o','u'];
+    var count = 0;
+    strCharArray.forEach(element =>{
+        if(vowels.includes(element) == true){
+            count++;
+        }
+    });
+    return count;
+}
+
+console.log(countVowels('Siba'));
+
+//Create a function that takes in an array of numbers and returns the sum of its cubes.
+function sumOfCubes(nums){
+var sum = 0;
+nums.forEach(element=>{
+    sum+=Math.pow(element, 3)
+});
+return sum;
+}
+// Given a word, write a function that returns the first index and the last index of a character.
+function charIndex(word, char) {
+    var indexes =[];
+    var strCharArray = word.split('');
+    strCharArray.forEach((element,index)=>{
+        if(element == char ){
+            indexes.push(index);
+        }
+    });
+
+    if(indexes.length > 0){
+        if(indexes.length == 1){
+            indexes.push(indexes[0]);
+            return indexes;
+        }
+        else if(indexes.length >= 2){
+            var indexes1 =[];
+            indexes1.push(indexes[0]);
+            indexes1.push(indexes[indexes.length - 1]);
+            return indexes1;
+        }
+        
+    }
+    else
+        return undefined;
+}
+
+//Create a function to convert an array of percentages to their decimal equivalents.
+function convertToDecimal(perc) {
+    var percArr = [];
+    var percArrFloat = []; 
+    console.log(perc); 
+    perc.forEach(element=>{  
+        percArr.push(parseFloat(element.replace('%','')));
+    });
+    console.log(percArr); 
+    percArr.forEach(element=>{  
+        var num = element/100;
+        console.log(num);
+        percArrFloat.push(num);
+    });
+
+    return percArrFloat;
+} 
+console.log(convertToDecimal(["33%", "98.1%", "56.44%", "100%"]));
+
+//Create a function that takes an integer and returns the factorial of that integer. That is, the integer multiplied by all positive lower integers.
+function factorial(num) {
+    if(num > 1 ){
+        return num * factorial(num-1);
+    }
+    else{
+        return 1;
+    }
+}
+console.log(factorial(5));
+
+//Transform into an Array with No Duplicates
+function set(arr) {
+    var arrNoDuplicate = [];
+	arr.forEach(element =>{
+        if(!arrNoDuplicate.includes(element)){
+            arrNoDuplicate.push(element);
+        }
+    });
+    return arrNoDuplicate;
+}
+
+console.log(set([1,1,2,2,3,4,5,6]));
+
+  </script>
+
+</body>
+
+</html>
