@@ -132,6 +132,7 @@ return sum;
 // Given a word, write a function that returns the first index and the last index of a character.
 function charIndex(word, char) {
     var indexes =[];
+    // convert string to char array
     var strCharArray = word.split('');
     strCharArray.forEach((element,index)=>{
         if(element == char ){
@@ -198,14 +199,224 @@ function set(arr) {
 }
 
 console.log(set([1,1,2,2,3,4,5,6]));
-
+// Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. (555) 555-5555).
 // formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) ➞ "(123) 456-7890"
-function formatPhoneNumber(numbers) {
-    var repeatedChar = numbers.join('');
-    var repeatedCharStr = repeatedChar
+function formatPhoneNumber(numbers) { 
+    var stringNumber = "(";
+    for(let i = 0;i<numbers.length;i++){
+        if(i < 3){
+            if(i == 2){
+                stringNumber = stringNumber+numbers[i]+") ";
+            }
+            else{
+                stringNumber = stringNumber+numbers[i];
+            }
+        }
+        else {
+            if(i == 5){
+                stringNumber = stringNumber+numbers[i]+"-";
+            }
+            else{
+                stringNumber = stringNumber+numbers[i];
+            }
+        }
+    }
+    return stringNumber;
 }
-  </script>
+console.log(formatPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
+
+function getAbsSum(arr) {
+    var sum = 0;
+    arr.forEach(element =>{
+        sum = sum+Math.abs(element);
+    });
+    return sum;
+}
+
+// Create a function that returns the number of hashes and pluses in a string.
+function hashPlusCount(str) {
+    var strCharArray = str.split('');
+    var plusCount = 0;
+    var hashCount = 0;
+    var arr = [];
+    strCharArray.forEach(element=>{
+        if(element == "+"){
+            plusCount+=1;
+        }
+        if(element == "#"){
+            hashCount+=1;
+        }
+    });
+    arr.push(hashCount);
+    arr.push(plusCount);
+    return arr
+}
+console.log(hashPlusCount("###+"));
+
+// Create a function that returns the index of the first vowel in a string.
+function firstVowel(str) {
+    var vowelArr = ['a','e','i','o','u'];
+    var strArr = str.toLowerCase().split("");
+    console.log(strArr);
+
+    var position = -1;
+
+    // for(let i = 0;i<strArr.length;i++){
+    //     let leter = strArr[i];
+    //     if(vowelArr.includes(leter)){
+    //         console.log(leter);
+    //         position = i;
+    //         return position; 
+    //     }
+    // }
+
+    for(let i in strArr){
+        let leter = strArr[i];
+        if(vowelArr.includes(leter)){
+            console.log(leter);
+            position = i;
+            return position; 
+        }
+    }
+
+    // strArr.forEach((element,index)=>{
+    //     if(vowelArr.includes(element)){
+    //         console.log(element);
+    //         position = index;
+    //         return position;
+    //     }
+    // }); 
+}
+
+console.log(firstVowel("hello"));
+
+/* 
+maximumScore([
+  { tile: "N", score: 1 },
+  { tile: "K", score: 5 },
+  { tile: "Z", score: 10 },
+  { tile: "X", score: 8 },
+  { tile: "D", score: 2 },
+  { tile: "A", score: 1 },
+  { tile: "E", score: 1 }
+]) ➞ 28
+*/
+function maximumScore(tileHand) {
+
+    var sum = 0;
+    tileHand.forEach((element) =>{
+        sum = sum+ element.score;
+    });
+    return sum;
+}
+
+maximumScore([
+  { tile: "N", score: 1 },
+  { tile: "K", score: 5 },
+  { tile: "Z", score: 10 },
+  { tile: "X", score: 8 },
+  { tile: "D", score: 2 },
+  { tile: "A", score: 1 },
+  { tile: "E", score: 1 }
+]);
+
+// https://edabit.com/challenge/FPHnbisnLwrQFYyAg
+function amplify(num) {
+    var arr = [];
+	for(let i = 1;i<=num;i++){
+        if(i%4==0){
+            arr.push(i*10);
+        }
+        else{
+            arr.push(i);
+        }
+    }
+    return arr;
+}
+
+amplify(25);
+
+// https://edabit.com/challenge/3HcuuwEyBAExktt6c
+function makeHappy(str) {
+    var sadFaceArray = [':(',' 8(','x(',';('];
+    var happyFaceArray = [':)',' 8)','x)',';)'];  
+
+    for(let i in sadFaceArray) {
+        str =  str.replace(sadFaceArray[i],happyFaceArray[i]);
+    }
+
+     
+    return str;
+}
+
+console.log(makeHappy("I am :( :( 8( :("));
+
+// A group of friends have decided to start a secret society. The name will be the first letter of each of their names, sorted in alphabetical order.
+//societyName(["Adam", "Sarah", "Malcolm"]) ➞ "AMS"
+function societyName(friends) {
+    friends = friends.sort();
+    var groupname = "";
+    for(let item of friends){
+        groupname = groupname+item.substring(0,1);
+    }
+	return groupname;
+}
+console.log(societyName(["Adam", "Sarah", "Malcolm"]));
+// https://edabit.com/challenge/hscAGyt4iNZ3PKy3g
+function chatroomStatus(users) {
+    let peopleOnline = ""; 
+console.log(users[0]);
+    if(users == null && users.length == 0){
+        peopleOnline =  "no one online";
+    }
+    else  if(users.length == 0){
+        peopleOnline =   "no one online";
+    }
+    else if(users.length == 1 ){
+        peopleOnline =  users[0]+" online";
+    }
+    else if(users.length == 2 ){
+        peopleOnline =  users[0]+" and "+users[1]+" online";
+    }
+    else{
+        let size = users.length;
+        size = size-2;
+        console.log(size);
+        peopleOnline =  users[0]+", "+users[1]+" and "+ size +" more online";
+    } 
+    return peopleOnline;
+}
+console.log(chatroomStatus(["pap_ier44", "townieBOY", "panda321", "motor_bike5", "sandwichmaker833", "violinist91"]));
+  
+// / reverse an array
+function reverse(arr) {
+    let revArr = [];
+    for(let i = arr.length-1;i>=0;i--){
+        revArr.push(arr[i]);
+    }
+    return revArr;
+}  
+  console.log(reverse([1, 2, 3, 4]));
+  //https://edabit.com/challenge/Twbmxzd3JwkkqAWES
+  function isOmnipresent(arr, val) {
+      let isContains = true;
+	for(let item of arr){
+        if(item.includes(val)){
+            return true;
+        }
+        else{
+            false;
+            return false;
+        }
+    } 
+  }
+  console.log(isOmnipresent([[1, 1], [1, 3], [5, 1], [6, 1]], 3));
+//   https://edabit.com/challenge/zmyuLfHcbJeTef5yr
+let x = (num) =>{
+    (num.length == 5 && Number(num) != NaN )
+}
+console.log(Number("12 3"));
+</script>
 </body>
-
 </html>
