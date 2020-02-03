@@ -48,18 +48,19 @@ class App extends Component {
   
   render() {
 
-    const style={
-      backgroundcolor: '#f00',
+    const style = {
+      backgroundColor: 'green',
+      color:'white',
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      margin:'40px'
+      cursor:'pointer'
     }
 
 
     let persons = null;
     if(this.state.showUser){
-      persons = <div>
+      persons = (<div>
         {this.state.users.map((person,index) =>{
           return <User 
           click={() => this.deleteUserhandler(index)}
@@ -71,16 +72,30 @@ class App extends Component {
           onNameChange = {(event) => this.userNameChangeHandler(event,person.id)}
           />
         })}
-    </div>
+    </div>);
+    style.backgroundColor = 'red';
+    style.color = 'white';
+    }
+
+
+    // let classes = ['red','bold'].join( ' ');
+    const classes = [];
+    if(this.state.users.length <= 2){
+      classes.push('red');
+    }
+
+    if(this.state.users.length <= 1){
+      classes.push('bold');
     }
 
     return (
       <div className="App">
         <div className="App-header">
           <h1>Welcome to React JS LIST example</h1>
+          <p className={classes.join(' ')}>This is Really Working!</p>
           <button 
-        style={style}
-        onClick={ this.toggleUserHandler }>Switch Name</button>
+                  style={style}
+                  onClick={ this.toggleUserHandler }>Switch Name</button>
         </div> 
         {persons}
       </div>
