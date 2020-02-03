@@ -4,13 +4,15 @@ const user = (props) =>{
 
     return(
         <div className = "User">
-            <p1> USER DETAILS</p1>
-            <p1> NAME : {props.name}</p1>
-            <p1> AGE : {props.age}</p1>
-            <p1> EMAIL : {props.email}</p1>
-            <p1> MOBILE : {props.mobile}</p1>
+            <p > USER DETAILS</p> 
+            
+            <p> My name is : {props.name}</p> 
+            <input type="text" onChange={props.onNameChange} value={props.name}/>
+            <p> EMAIL : {props.email}</p> 
+            <p> AGE : {props.age}</p> 
+            <p> MOBILE : {props.mobile}</p> 
+            <button  onClick={props.click}>DELETE USER</button>
         </div>
     )
 }
-
 export default user;
