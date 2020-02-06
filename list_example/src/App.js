@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import User from './data/User';
+import Radium,{StyleRoot} from 'radium';
 
 class App extends Component {
 
@@ -54,8 +55,12 @@ class App extends Component {
       font: 'inherit',
       border: '1px solid blue',
       padding: '8px',
-      cursor:'pointer'
-    }
+      cursor:'pointer',
+      ':hover': {
+        backgroundColor:'lightgreen',
+        color:'black'
+      }
+    };
 
 
     let persons = null;
@@ -74,7 +79,13 @@ class App extends Component {
         })}
     </div>);
     style.backgroundColor = 'red';
-    style.color = 'white';
+  //  style.color = 'white';
+
+    style[':hover'] =  {
+      backgroundColor:'salmon',
+      color:'black'
+    }
+
     }
 
 
@@ -89,6 +100,7 @@ class App extends Component {
     }
 
     return (
+      <StyleRoot>
       <div className="App">
         <div className="App-header">
           <h1>Welcome to React JS LIST example</h1>
@@ -99,7 +111,8 @@ class App extends Component {
         </div> 
         {persons}
       </div>
+      </StyleRoot>
     );
   }
 }
-export default App;
+export default Radium(App);
