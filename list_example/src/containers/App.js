@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from '../assets/logo.svg';
 import './App.css';
-import User from './data/User';
+import User from '../components/User/users/User.js';
 import Radium,{StyleRoot} from 'radium';
-
+import ErrorBoundary from '../components/errorBoundary/ErrorBoundary';
+import Users from '../components/User/Users';
 class App extends Component {
 
 
@@ -67,7 +68,7 @@ class App extends Component {
     if(this.state.showUser){
       persons = (<div>
         {this.state.users.map((person,index) =>{
-          return <User 
+          return <ErrorBoundary key={person.id}><User 
           click={() => this.deleteUserhandler(index)}
           name={person.name}
           email= {person.email}  
@@ -76,6 +77,7 @@ class App extends Component {
           key={person.id}
           onNameChange = {(event) => this.userNameChangeHandler(event,person.id)}
           />
+          </ErrorBoundary>
         })}
     </div>);
     style.backgroundColor = 'red';
