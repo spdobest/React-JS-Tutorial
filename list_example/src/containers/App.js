@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../assets/logo.svg';
+// import logo from '../assets/logo.svg';
 import './App.css';
 import User from '../components/User/users/User.js';
 import Radium,{StyleRoot} from 'radium';
@@ -66,18 +66,24 @@ class App extends Component {
 
     let persons = null;
     if(this.state.showUser){
-      persons = (<div>
+      persons=(<div>
+
+<Users
+  users={this.state.users}
+  clicked={this.deleteUserhandler}
+  changed={this.userNameChangeHandler}
+  />
+
         {this.state.users.map((person,index) =>{
-          return <ErrorBoundary key={person.id}><User 
+          return <User 
           click={() => this.deleteUserhandler(index)}
           name={person.name}
-          email= {person.email}  
-          age= {person.age}
-          mobile= {person.mobile}
+          email={person.email}  
+          age={person.age}
+          mobile={person.mobile}
           key={person.id}
-          onNameChange = {(event) => this.userNameChangeHandler(event,person.id)}
-          />
-          </ErrorBoundary>
+          onNameChange={(event) => this.userNameChangeHandler(event,person.id)}
+          /> 
         })}
     </div>);
     style.backgroundColor = 'red';
@@ -93,11 +99,11 @@ class App extends Component {
 
     // let classes = ['red','bold'].join( ' ');
     const classes = [];
-    if(this.state.users.length <= 2){
+    if(this.state.users.length <=2){
       classes.push('red');
     }
 
-    if(this.state.users.length <= 1){
+    if(this.state.users.length <=1){
       classes.push('bold');
     }
 

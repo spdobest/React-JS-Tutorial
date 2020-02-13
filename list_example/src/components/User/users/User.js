@@ -11,7 +11,7 @@ const style = {
 
     return(
         <StyleRoot>
-        <div className = "User" style={style} >
+        <div className="User" style={style} >
             <p > USER DETAILS</p> 
             
             <p> My name is : {props.name}</p> 

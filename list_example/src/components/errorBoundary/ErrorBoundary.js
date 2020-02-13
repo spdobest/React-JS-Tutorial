@@ -16,7 +16,7 @@ class ErrorBoundary extends Component{
         else{
             return this.props.children;
         }
-        return <h1> Something Went Wrong... </h1>
+        // return <h1> Something Went Wrong... </h1>
     }
 }
 export default ErrorBoundary;
