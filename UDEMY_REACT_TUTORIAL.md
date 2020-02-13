@@ -102,6 +102,23 @@ Now it will show the horzontal list of boxes with all the details above mentione
 ## Single Page and Multi Page Application  
 **Single Page** Only one HTML page with content is dynamically loaded by client at run time. Content is load using React. Typically only one ReactDOM.render() call  
 **Multi Page** Multiple HTML page where content is render on server.  
+ 
+ ##  Deeper React Component and React Internals  
+ Folder structure is important in React native project  
+ **component** - where all component classes will be inside the folder.  
+ **Asserts** - where we will put all the Image and resources file inside this folder  
+ **Cockpit** - where we can put files like App.js and App.css files inside there  
+ **Contsainre**- it will contains the html and css files  
+   
+ ##  Stateless and Statefull COmponent  
+ State Hoock  
+ Class based vs Functional Component  
+ **Component Life Cycle**  
+ ![alt tag](https://github.com/spdobest/React-JS-Tutorial/blob/master/Documents/ClassBasedComponent_vs_FunctionalComponent.png)     
+   
+  ![alt tag](https://github.com/spdobest/React-JS-Tutorial/blob/master/Documents/ComponentLifeCycle_creation.png)    
+    
+  ![alt tag](https://github.com/spdobest/React-JS-Tutorial/blob/master/Documents/ComponentLifeCycle.png)     
 
 
 
