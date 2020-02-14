@@ -122,4 +122,7 @@ Now it will show the horzontal list of boxes with all the details above mentione
   
   ![alt tag](https://github.com/spdobest/React-JS-Tutorial/blob/master/Documents/lifecycle_component_update.png)  
 
-
+ ### useEffect  
+   
+ 
+ ### Cleanup work using useEffect  
