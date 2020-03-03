@@ -3,6 +3,7 @@ https://reactjs.org/tutorial/tutorial.html
 https://code.visualstudio.com/docs/nodejs/reactjs-tutorial  
 https://github.com/enaqx/awesome-react  
 https://www.quora.com/Whats-the-best-place-to-learn-React-js  
+https://egghead.io/lessons/ (Video Tutorial).  
 
 #
 
