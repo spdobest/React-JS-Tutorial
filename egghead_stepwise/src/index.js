@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../src/step1/App';
-import AppState from './step2_mantain_state/AppState'
-import AppChildren from './step3_children_othercomponent/AppChildren'
-import AccessNestedData from './step4_access_nested_Data_using_children_prop/AccessNestedData'
-import CustomProptypeValidation from './step5_custom_proptype_validation/CustomProptypeValidation';
-import EventHandling from './step6_event_handling/EventHandling';
-import GetReference from './step7_getreference_of_other_component/GetReference';
-import ComponentLifecycle from './step8_lifecycle/ComponentLifecycle'
+import AppState from './step2/AppState'
+import AppChildren from './step3/AppChildren'
+import AccessNestedData from './step4/AccessNestedData'
+import CustomProptypeValidation from './step5/CustomProptypeValidation';
+import EventHandling from './step6/EventHandling';
+import GetReference from './step7/GetReference';
+import ComponentLifecycle from './step8/ComponentLifecycle';
+import LifeCycleWithState from './step9/LifeCycleWithState';
+import ComponentsUpdateOnPropsChange from './step10/ComponentsUpdateOnPropsChange';
+import AppIterateWithMap from './step11/AppIterateWithMap'
 
 import './index.css';
 // https://egghead.io/lessons/react-use-create-react-app-to-setup-a-simple-react-app
@@ -19,6 +22,9 @@ ReactDOM.render(
   // <CustomProptypeValidation/>,
   // <EventHandling/>,
   // <GetReference />,
-  <ComponentLifecycle />,
+  // <ComponentLifecycle />,
+  // <LifeCycleWithState/>,
+  // <ComponentsUpdateOnPropsChange />,
+  <AppIterateWithMap />,
   document.getElementById('root')
 );
