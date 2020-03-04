@@ -26,17 +26,15 @@ class AppIterateWithMap extends Component{
         if(this.state.filter){
             items = items.filter( item => item.toLowerCase() )
             .includes(this.state.filter.toLowerCase())
-        }
-        let arrayItems= this.state.items;
+            console.log(items);
+        } 
     return (
-
-       
         
         <div>
             <input type="text" onChange={this.filter.bind(this)}/>
             <h1>  Sibaprasad </h1>  
             
-            {arrayItems.map(item =>
+            {items.map(item =>
                 <Person key={item} name = {item}/> 
             )}
         </div>
