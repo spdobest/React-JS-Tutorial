@@ -10,7 +10,11 @@ import GetReference from './step7/GetReference';
 import ComponentLifecycle from './step8/ComponentLifecycle';
 import LifeCycleWithState from './step9/LifeCycleWithState';
 import ComponentsUpdateOnPropsChange from './step10/ComponentsUpdateOnPropsChange';
-import AppIterateWithMap from './step11/AppIterateWithMap'
+import AppIterateWithMap from './step11/AppIterateWithMap';
+import HigherOrderComponent from './step12/HigherOrderComponent';
+import ReactChildrenUtilities from './step13/ReactChildrenUtilities';
+import CloneComponent from './step14/CloneComponent';
+import RusableComponent from './step15/RusableComponent';
 
 import './index.css';
 // https://egghead.io/lessons/react-use-create-react-app-to-setup-a-simple-react-app
@@ -25,6 +29,10 @@ ReactDOM.render(
   // <ComponentLifecycle />,
   // <LifeCycleWithState/>,
   // <ComponentsUpdateOnPropsChange />,
-  <AppIterateWithMap />,
+  // <AppIterateWithMap />,
+  // <HigherOrderComponent/>,
+  // <ReactChildrenUtilities/>,
+  // <CloneComponent/>,
+  <RusableComponent />,
   document.getElementById('root')
 );
